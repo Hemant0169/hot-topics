@@ -1,0 +1,396 @@
+/* ==========================================================================
+   ANALOGOUS COLOR PALETTE (REQUIRED CSS COMMENT)
+   Hexadecimal Values:
+   - Deep Indigo/Navy (Primary Dark): #1E1B4B
+   - Rich Royal Blue (Primary Accent): #2563EB
+   - Vibrant Teal (Secondary Accent): #0D9488
+   - Bright Cyan (Highlight/Hover):  #06B6D4
+   - Soft Teal Tint (Light Container):#E6FFFA
+   - Dark Slate (Body Text - AAA):   #0F172A
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. RESETS & BASE STYLES
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Line-height requirement: between 1.4 and 1.6 */
+  line-height: 1.5;
+  /* Mobile Default Font Size: 0.75rem */
+  font-size: 0.75rem;
+  /* Sans-serif font for body text */
+  font-family: 'Open Sans', system-ui, sans-serif;
+  color: #0F172A;
+  background-color: #F8FAFC;
+}
+
+/* Serif font for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', Georgia, serif;
+  color: #1E1B4B;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+/* Container: Content stays centered while background spans full width */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. HEADER & NAVIGATION
+   -------------------------------------------------------------------------- */
+.site-header {
+  background: linear-gradient(135deg, #1E1B4B 0%, #2563EB 100%);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 0;
+}
+
+.logo {
+  font-size: 2.75rem;
+  color: #06B6D4;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+}
+
+.site-nav {
+  width: 100%;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.site-nav a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.85rem;
+  background-color: #0D9488;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 6px;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background-color: #06B6D4;
+  color: #1E1B4B;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   3. MASTHEAD
+   -------------------------------------------------------------------------- */
+.masthead {
+  /* Relates to the image in Article 1 */
+  background-image: linear-gradient(rgba(30, 27, 75, 0.75), rgba(37, 99, 235, 0.75)), url('../img/money.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.masthead-overlay {
+  width: 100%;
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.tagline {
+  font-size: 2.25rem;
+  color: #FFFFFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. MAIN CONTENT & ARTICLES (MOBILE VIEW < 35rem)
+   -------------------------------------------------------------------------- */
+.main-content {
+  padding: 2.5rem 1.25rem;
+}
+
+/* Entire content is aligned center in Mobile View */
+.topic-article {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  background: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #0D9488;
+}
+
+.topic-article h2 {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  color: #1E1B4B;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-figure {
+  width: 100%;
+  margin-bottom: 1.25rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-figure img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.article-figure figcaption {
+  font-size: 0.85em;
+  color: #475569;
+  background-color: #E6FFFA;
+  padding: 0.5rem;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Exception rule from guidelines: Paragraph text is aligned left in mobile */
+.article-text p {
+  text-align: left;
+  margin-bottom: 1rem;
+  color: #334155;
+}
+
+.divider {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #0D9488, transparent);
+  margin: 2.5rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. PORTFOLIO PAGE (MOBILE VIEW: 1 COLUMN)
+   -------------------------------------------------------------------------- */
+.portfolio-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+.card {
+  background: #FFFFFF;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #E2E8F0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(13, 148, 136, 0.15);
+}
+
+.card figure {
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.card figcaption {
+  padding: 1rem;
+  font-weight: 700;
+  color: #1E1B4B;
+  background-color: #FFFFFF;
+  border-top: 2px solid #E6FFFA;
+}
+
+/* --------------------------------------------------------------------------
+   6. FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: #1E1B4B;
+  color: #F8FAFC;
+  padding: 2.5rem 0 1.5rem 0;
+  border-top: 4px solid #0D9488;
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.company-info h3 {
+  color: #06B6D4;
+  margin-bottom: 0.5rem;
+}
+
+.company-info p {
+  color: #94A3B8;
+  font-size: 0.9em;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.social-links a {
+  color: #FFFFFF;
+  background: #2563EB;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  background-color: #06B6D4;
+  color: #1E1B4B;
+  transform: translateY(-3px);
+}
+
+.copyright {
+  font-size: 0.85em;
+  color: #64748B;
+}
+
+/* ==========================================================================
+   7. MEDIA QUERIES (RESPONSIVE BREAKPOINTS)
+   ========================================================================== */
+
+/* TABLET VIEW: 35rem <= Viewport < 80rem */
+@media screen and (min-width: 35rem) {
+  html {
+    /* Tablet Font Size: 1rem */
+    font-size: 1rem;
+  }
+
+  .site-nav ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .site-nav a {
+    width: 180px;
+  }
+
+  /* Image 40%, Text 60% side-by-side */
+  .article-content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.75rem;
+  }
+
+  .article-figure {
+    width: 40%;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .article-text {
+    width: 60%;
+  }
+
+  /* Portfolio 2 Columns */
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* DESKTOP VIEW: Viewport >= 80rem */
+@media screen and (min-width: 80rem) {
+  html {
+    /* Desktop Font Size: 1.25rem */
+    font-size: 1.25rem;
+  }
+
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin-bottom: 0;
+  }
+
+  .site-nav ul {
+    justify-content: flex-end;
+  }
+
+  /* Entire content aligned left in Desktop View */
+  .topic-article, 
+  .topic-article h2,
+  .portfolio-section h2 {
+    text-align: left;
+  }
+
+  .article-figure {
+    width: 40%;
+  }
+
+  .article-text {
+    width: 60%;
+  }
+
+  /* Portfolio 3 Columns */
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
